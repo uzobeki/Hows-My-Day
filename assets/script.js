@@ -20,28 +20,24 @@ function keepTime(){
 
   $(".input-group").each(function(){
     var timeblock = parseInt($(this).attr("id"));
-    console.log(timeblock);
+    console.log((timeblock));
 
     if(timeblock > timeNow) {
-      var textarea = $("<textarea>")
-      $(textarea).attr("class", "future")
-      $("textarea")
-      // $("textarea").removeClass("present");
-      // $("textarea").removeClass("past");
-      // $("textarea").addClass("future");
-      console.log(timeblock > timeNow)
+      $("textarea").removeClass("present");
+      $("textarea").removeClass("past");
+      $("textarea").addClass("future");
+      console.log(timeblock < timeNow)
     }
-    else if (timeblock == timeNow) {
-      // $("textarea").removeClass("future");
-      // $("textarea").removeClass("past");
-      // $("textarea").addClass("present");
+    else if (timeblock === timeNow) {
+      $("textarea").removeClass("future");
+      $("textarea").removeClass("past");
+      $("textarea").addClass("present");
       console.log(timeblock == timeNow);
     }
     else{
-      
-      // $("textarea").removeClass("present");
-      // $("textarea").removeClass("future");
-      // $("textarea").addClass("past");
+      $("textarea").removeClass("present");
+      $("textarea").removeClass("future");
+      $("textarea").addClass("past");
       console.log(timeblock < timeNow);
     };
     
